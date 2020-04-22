@@ -166,10 +166,10 @@ let ingredients = [
     {
         name: "Bright-Eyed Crab",
         type: "food",
-        heartRestoration: 1,
+        heartRestoration: 2,
         timeAdded: null,
-        effectType: null,
-        effectStrength: null
+        effectType: rejeuvenating,
+        effectStrength: 2.8
     },
     {
         name: "Cane Sugar",
@@ -230,10 +230,10 @@ let ingredients = [
     {
         name: "Courser Bee Honey",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 4,
+        timeAdded: null,
+        effectType: rejeuvenating,
+        effectStrength: 2.8
     },
     {
         name: "Dinraal's Claw",
@@ -278,26 +278,26 @@ let ingredients = [
     {
         name: "Endura Carrot",
         type: "food",
-        heartRestoration: 1,
+        heartRestoration: 4,
         timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        effectType: staminaUp,
+        effectStrength: 2
     },
     {
         name: "Endura Shroom",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 2,
+        timeAdded: null,
+        effectType: staminaUp,
+        effectStrength: 0.5
     },
     {
         name: "Energetic Rhino Beetle",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: rejeuvenating,
+        effectStrength: 8.4
     },
     {
         name: "Fairy",
@@ -814,10 +814,10 @@ let ingredients = [
     {
         name: "Restless Cricket",
         type: "critter",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        effectType: rejeuvenating,
+        effectStrength: 1.4
     },
     {
         name: "Rock Salt",
@@ -951,17 +951,17 @@ let ingredients = [
         name: "Stamella Shroom",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: rejeuvenating,
+        effectStrength: 1.4
     },
     {
         name: "Staminoka Bass",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 2,
+        timeAdded: null,
+        effectType: rejeuvenating,
+        effectStrength: 5.6
     },
     {
         name: "Star Fragment",
@@ -1038,10 +1038,10 @@ let ingredients = [
     {
         name: "Tireless Frog",
         type: "critter",
-        heartRestoration: 1,
+        heartRestoration: 4,
         timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        effectType: staminaUp,
+        effectStrength: 1
     },
     {
         name: "Voltfin Trout",
