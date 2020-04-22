@@ -71,7 +71,7 @@ let ingredients = [
         name: "Apple",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -79,7 +79,7 @@ let ingredients = [
         name: "Armoranth",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -87,7 +87,7 @@ let ingredients = [
         name: "Armored Carp",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -95,7 +95,7 @@ let ingredients = [
         name: "Armored Porgy",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -103,7 +103,7 @@ let ingredients = [
         name: "Big Hearty Radish",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -127,7 +127,7 @@ let ingredients = [
         name: "Bladed Rhino Beetle",
         type: "critter",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -135,7 +135,7 @@ let ingredients = [
         name: "Blue Nightshade",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -143,7 +143,7 @@ let ingredients = [
         name: "Bokoblin Fang",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -151,7 +151,7 @@ let ingredients = [
         name: "Bokoblin Guts",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -159,7 +159,7 @@ let ingredients = [
         name: "Bokoblin Horn",
         type: "monsterPart",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -167,7 +167,7 @@ let ingredients = [
         name: "Bright-Eyed Crab",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -175,7 +175,7 @@ let ingredients = [
         name: "Cane Sugar",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -183,7 +183,7 @@ let ingredients = [
         name: "Chickaloo Tree Nut",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -191,7 +191,7 @@ let ingredients = [
         name: "Chillfin Trout",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -199,7 +199,7 @@ let ingredients = [
         name: "Chillshroom",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -207,7 +207,7 @@ let ingredients = [
         name: "Chuchu Jelly",
         type: "monsterPart",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -215,7 +215,7 @@ let ingredients = [
         name: "Cold Darner",
         type: "critter",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -223,7 +223,7 @@ let ingredients = [
         name: "Cool Safflina",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
@@ -238,16 +238,16 @@ let ingredients = [
     {
         name: "Dinraal's Claw",
         type: "dragon",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 2,
+        timeAdded: 210,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Dinraal's Scale",
         type: "dragon",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 1.25,
+        timeAdded: 90,
         effectType: null,
         effectStrength: null
     },
@@ -310,16 +310,16 @@ let ingredients = [
     {
         name: "Farosh's Claw",
         type: "dragon",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 2,
+        timeAdded: 210,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Farosh's Scale",
         type: "dragon",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 1.25,
+        timeAdded: 90,
         effectType: null,
         effectStrength: null
     },
@@ -679,23 +679,23 @@ let ingredients = [
         name: "Monster Extract",
         type: "monsterExtract",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: null,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Naydra's Claw",
         type: "dragon",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 2,
+        timeAdded: 210,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Naydra's Scale",
         type: "dragon",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 1.25,
+        timeAdded: 90,
         effectType: null,
         effectStrength: null
     },
@@ -854,48 +854,48 @@ let ingredients = [
     {
         name: "Shard of Dinraal's Fang",
         type: "dragon",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 2.5,
+        timeAdded: 630,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Shard of Dinraal's Horn",
         type: "dragon",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 3.25,
+        timeAdded: 1800,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Shard of Farosh's Fang",
         type: "dragon",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 2.5,
+        timeAdded: 630,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Shard of Farosh's Horn",
         type: "dragon",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 3.25,
+        timeAdded: 1800,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Shard of Naydra's Fang",
         type: "dragon",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 2.5,
+        timeAdded: 630,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Shard of Naydra's Horn",
         type: "dragon",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 3.25,
+        timeAdded: 1800,
         effectType: null,
         effectStrength: null
     },
@@ -1117,14 +1117,6 @@ let ingredients = [
     },
     {
         name: "Zapshroom",
-        type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
-    },
-    {
-        name: "Acorn",
         type: "food",
         heartRestoration: 1,
         timeAdded: 50,
