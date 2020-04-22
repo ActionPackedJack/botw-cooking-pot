@@ -254,10 +254,10 @@ let ingredients = [
     {
         name: "Electric Darner",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: shockResistance,
+        effectStrength: 2
     },
     {
         name: "Electric Keese Wing",
@@ -270,10 +270,10 @@ let ingredients = [
     {
         name: "Electric Safflina",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: shockResistance,
+        effectStrength: 1
     },
     {
         name: "Endura Carrot",
@@ -334,10 +334,10 @@ let ingredients = [
     {
         name: "Fireproof Lizard",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: flameGuard,
+        effectStrength: 1
     },
     {
         name: "Fleet-Lotus Seeds",
@@ -926,10 +926,10 @@ let ingredients = [
     {
         name: "Smotherwing Butterfly",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: flameGuard,
+        effectStrength: 2
     },
     {
         name: "Sneaky River Snail",
@@ -1030,10 +1030,10 @@ let ingredients = [
     {
         name: "Thunderwing Butterfly",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: shockResistance,
+        effectStrength: 1
     },
     {
         name: "Tireless Frog",
@@ -1055,9 +1055,9 @@ let ingredients = [
         name: "Voltfruit",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: shockResistance,
+        effectStrength: 1
     },
     {
         name: "Warm Darner",
@@ -1119,8 +1119,8 @@ let ingredients = [
         name: "Zapshroom",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: shockResistance,
+        effectStrength: 2
     },
 ]
