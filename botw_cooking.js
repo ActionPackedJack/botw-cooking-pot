@@ -119,7 +119,7 @@ let ingredients = [
         name: "Bird Egg",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 90,
         effectType: null,
         effectStrength: null
     },
@@ -175,7 +175,7 @@ let ingredients = [
         name: "Cane Sugar",
         type: "food",
         heartRestoration: 1,
-        timeAdded: null,
+        timeAdded: 80,
         effectType: null,
         effectStrength: null
     },
@@ -183,7 +183,7 @@ let ingredients = [
         name: "Chickaloo Tree Nut",
         type: "food",
         heartRestoration: 1,
-        timeAdded: null,
+        timeAdded: 40,
         effectType: null,
         effectStrength: null
     },
@@ -359,7 +359,7 @@ let ingredients = [
         name: "Fresh Milk",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 80,
         effectType: null,
         effectStrength: null
     },
@@ -367,7 +367,7 @@ let ingredients = [
         name: "Goat Butter",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 80,
         effectType: null,
         effectStrength: null
     },
@@ -375,7 +375,7 @@ let ingredients = [
         name: "Goron Spice",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 90,
         effectType: null,
         effectStrength: null
     },
@@ -487,7 +487,7 @@ let ingredients = [
         name: "Hylian Rice",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 60,
         effectType: null,
         effectStrength: null
     },
@@ -495,7 +495,7 @@ let ingredients = [
         name: "Hylian Shroom",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -503,7 +503,7 @@ let ingredients = [
         name: "Hyrule Bass",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -511,7 +511,7 @@ let ingredients = [
         name: "Hyrule Herb",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -727,7 +727,7 @@ let ingredients = [
         name: "Palm Fruit",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -735,7 +735,7 @@ let ingredients = [
         name: "Raw Bird Drumstick",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -743,7 +743,7 @@ let ingredients = [
         name: "Raw Bird Thigh",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -751,7 +751,7 @@ let ingredients = [
         name: "Raw Gourmet Meat",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -759,7 +759,7 @@ let ingredients = [
         name: "Raw Meat",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -767,7 +767,7 @@ let ingredients = [
         name: "Raw Prime Meat",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -775,7 +775,7 @@ let ingredients = [
         name: "Raw Whole Bird",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -823,7 +823,7 @@ let ingredients = [
         name: "Rock Salt",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 60,
         effectType: null,
         effectStrength: null
     },
@@ -847,7 +847,7 @@ let ingredients = [
         name: "Sanke Carp",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -1023,7 +1023,7 @@ let ingredients = [
         name: "Tabantha Wheat",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 60,
         effectType: null,
         effectStrength: null
     },
@@ -1087,7 +1087,7 @@ let ingredients = [
         name: "Wildberry",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
