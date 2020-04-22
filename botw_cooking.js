@@ -68,6 +68,46 @@ let ingredients = [
         effectStrength: null
     },
     {
+        name: "Ancient Core",
+        type: "monsterPart",
+        heartRestoration: 0,
+        timeAdded: 190,
+        effectType: null,
+        effectStrength: null
+    },
+    {
+        name: "Ancient Gear",
+        type: "monsterPart",
+        heartRestoration: 0,
+        timeAdded: 110,
+        effectType: null,
+        effectStrength: null
+    },
+    {
+        name: "Ancient Screw",
+        type: "monsterPart",
+        heartRestoration: 0,
+        timeAdded: 70,
+        effectType: null,
+        effectStrength: null
+    },
+    {
+        name: "Ancient Shaft",
+        type: "monsterPart",
+        heartRestoration: 0,
+        timeAdded: 110,
+        effectType: null,
+        effectStrength: null
+    },
+    {
+        name: "Ancient Spring",
+        type: "monsterPart",
+        heartRestoration: 0,
+        timeAdded: 70,
+        effectType: null,
+        effectStrength: null
+    },
+    {
         name: "Apple",
         type: "food",
         heartRestoration: 1,
@@ -158,8 +198,8 @@ let ingredients = [
     {
         name: "Bokoblin Horn",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: null,
+        heartRestoration: 0,
+        timeAdded: 70,
         effectType: null,
         effectStrength: null
     },
@@ -206,8 +246,8 @@ let ingredients = [
     {
         name: "Chuchu Jelly",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: null,
+        heartRestoration: 0,
+        timeAdded: 70,
         effectType: null,
         effectStrength: null
     },
@@ -364,6 +404,14 @@ let ingredients = [
         effectStrength: null
     },
     {
+        name: "Giant Ancient Core",
+        type: "monsterPart",
+        heartRestoration: 0,
+        timeAdded: 190,
+        effectType: null,
+        effectStrength: null
+    },
+    {
         name: "Goat Butter",
         type: "food",
         heartRestoration: 0,
@@ -454,8 +502,8 @@ let ingredients = [
     {
         name: "Hinox Toenail",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 70,
         effectType: null,
         effectStrength: null
     },
@@ -558,16 +606,16 @@ let ingredients = [
     {
         name: "Keese Wing",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 70,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Lizalfos Horn",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 70,
         effectType: null,
         effectStrength: null
     },
@@ -598,8 +646,8 @@ let ingredients = [
     {
         name: "Lynel Horn",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 70,
         effectType: null,
         effectStrength: null
     },
@@ -654,8 +702,8 @@ let ingredients = [
     {
         name: "Moblin Horn",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 70,
         effectType: null,
         effectStrength: null
     },
@@ -702,8 +750,8 @@ let ingredients = [
     {
         name: "Octo Balloon",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 70,
         effectType: null,
         effectStrength: null
     },
@@ -718,7 +766,7 @@ let ingredients = [
     {
         name: "Octorok Tentacle",
         type: "monsterPart",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: 50,
         effectType: null,
         effectStrength: null
