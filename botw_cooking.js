@@ -78,26 +78,26 @@ let ingredients = [
     {
         name: "Armoranth",
         type: "food",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: null,
-        effectType: null,
-        effectStrength: null
+        effectType: defenseUp,
+        effectStrength: 1
     },
     {
         name: "Armored Carp",
         type: "food",
-        heartRestoration: 1,
+        heartRestoration: 2,
         timeAdded: null,
-        effectType: null,
-        effectStrength: null
+        effectType: defenseUp,
+        effectStrength: 2
     },
     {
         name: "Armored Porgy",
         type: "food",
-        heartRestoration: 1,
+        heartRestoration: 2,
         timeAdded: null,
-        effectType: null,
-        effectStrength: null
+        effectType: defenseUp,
+        effectStrength: 3
     },
     {
         name: "Big Hearty Radish",
@@ -126,10 +126,10 @@ let ingredients = [
     {
         name: "Bladed Rhino Beetle",
         type: "critter",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: null,
-        effectType: null,
-        effectStrength: null
+        effectType: attackUp,
+        effectStrength: 1
     },
     {
         name: "Blue Nightshade",
@@ -351,9 +351,9 @@ let ingredients = [
         name: "Fortified Pumpkin",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: defenseUp,
+        effectStrength: 2
     },
     {
         name: "Fresh Milk",
@@ -534,18 +534,18 @@ let ingredients = [
     {
         name: "Ironshell Crab",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 2,
+        timeAdded: null,
+        effectType: defenseUp,
+        effectStrength: 2
     },
     {
         name: "Ironshroom",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: defenseUp,
+        effectStrength: 2
     },
     {
         name: "Keese Eyeball",
@@ -607,33 +607,33 @@ let ingredients = [
         name: "Mighty Bananas",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: attackUp,
+        effectStrength: 2
     },
     {
         name: "Mighty Carp",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 2,
+        timeAdded: null,
+        effectType: attackUp,
+        effectStrength: 2
     },
     {
         name: "Mighty Porgy",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 2,
+        timeAdded: null,
+        effectType: attackUp,
+        effectStrength: 3
     },
     {
         name: "Mighty Thistle",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: attackUp,
+        effectStrength: 1
     },
     {
         name: "Moblin Fang",
@@ -782,18 +782,18 @@ let ingredients = [
     {
         name: "Razorclaw Crab",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 2,
+        timeAdded: null,
+        effectType: attackUp,
+        effectStrength: 2
     },
     {
         name: "Razorshroom",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: attackUp,
+        effectStrength: 2
     },
     {
         name: "Red Chuchu Jelly",
@@ -830,10 +830,10 @@ let ingredients = [
     {
         name: "Rugged Rhino Beetle",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: defenseUp,
+        effectStrength: 1
     },
     {
         name: "Rushroom",
