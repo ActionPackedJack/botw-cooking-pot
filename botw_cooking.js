@@ -102,18 +102,18 @@ let ingredients = [
     {
         name: "Big Hearty Radish",
         type: "food",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: null,
-        effectType: null,
-        effectStrength: null
+        effectType: healthUp,
+        effectStrength: 5
     },
     {
         name: "Big Hearty Truffle",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: healthUp,
+        effectStrength: 4
     },
     {
         name: "Bird Egg",
@@ -382,58 +382,58 @@ let ingredients = [
     {
         name: "Hearty Bass",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: healthUp,
+        effectStrength: 2
     },
     {
         name: "Hearty Blueshell Snail",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: healthUp,
+        effectStrength: 3
     },
     {
         name: "Hearty Durian",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: healthUp,
+        effectStrength: 4
     },
     {
         name: "Hearty Lizard",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: healthUp,
+        effectStrength: 4
     },
     {
         name: "Hearty Radish",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: healthUp,
+        effectStrength: 3
     },
     {
         name: "Hearty Salmon",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: healthUp,
+        effectStrength: 4
     },
     {
         name: "Hearty Truffle",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: healthUp,
+        effectStrength: 1
     },
     {
         name: "Hightail Lizard",
