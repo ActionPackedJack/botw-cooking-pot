@@ -134,10 +134,10 @@ let ingredients = [
     {
         name: "Blue Nightshade",
         type: "food",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: null,
-        effectType: null,
-        effectStrength: null
+        effectType: stealthUp,
+        effectStrength: 1
     },
     {
         name: "Bokoblin Fang",
@@ -343,9 +343,9 @@ let ingredients = [
         name: "Fleet-Lotus Seeds",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: speedUp,
+        effectStrength: 2
     },
     {
         name: "Fortified Pumpkin",
@@ -438,10 +438,10 @@ let ingredients = [
     {
         name: "Hightail Lizard",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: speedUp,
+        effectStrength: 1
     },
     {
         name: "Hinox Guts",
@@ -470,10 +470,10 @@ let ingredients = [
     {
         name: "Hot-footed Frog",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: speedUp,
+        effectStrength: 2
     },
     {
         name: "Hydromelon",
@@ -839,9 +839,9 @@ let ingredients = [
         name: "Rushroom",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: speedUp,
+        effectStrength: 1
     },
     {
         name: "Sanke Carp",
@@ -902,18 +902,18 @@ let ingredients = [
     {
         name: "Silent Princess",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 2,
+        timeAdded: null,
+        effectType: stealthUp,
+        effectStrength: 3
     },
     {
         name: "Silent Shroom",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: stealthUp,
+        effectStrength: 2
     },
     {
         name: "Sizzlefin Trout",
@@ -934,10 +934,10 @@ let ingredients = [
     {
         name: "Sneaky River Snail",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 2,
+        timeAdded: null,
+        effectType: stealthUp,
+        effectStrength: 1
     },
     {
         name: "Spicy Pepper",
@@ -974,10 +974,10 @@ let ingredients = [
     {
         name: "Stealthfin Trout",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 2,
+        timeAdded: null,
+        effectType: stealthUp,
+        effectStrength: 2
     },
     {
         name: "Summerwing Butterfly",
@@ -990,10 +990,10 @@ let ingredients = [
     {
         name: "Sunset Firefly",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: stealthUp,
+        effectStrength: 1
     },
     {
         name: "Sunshroom",
@@ -1007,17 +1007,17 @@ let ingredients = [
         name: "Swift Carrot",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: speedUp,
+        effectStrength: 1
     },
     {
         name: "Swift Violet",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: speedUp,
+        effectStrength: 2
     },
     {
         name: "Tabantha Wheat",
