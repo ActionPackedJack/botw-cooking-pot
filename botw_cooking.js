@@ -190,18 +190,18 @@ let ingredients = [
     {
         name: "Chillfin Trout",
         type: "food",
-        heartRestoration: 1,
+        heartRestoration: 2,
         timeAdded: null,
-        effectType: null,
-        effectStrength: null
+        effectType: heatResistance,
+        effectStrength: 3
     },
     {
         name: "Chillshroom",
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: null,
-        effectStrength: null
+        effectType: heatResistance,
+        effectStrength: 2
     },
     {
         name: "Chuchu Jelly",
@@ -214,18 +214,18 @@ let ingredients = [
     {
         name: "Cold Darner",
         type: "critter",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: null,
-        effectType: null,
-        effectStrength: null
+        effectType: heatResistance,
+        effectStrength: 2
     },
     {
         name: "Cool Safflina",
         type: "food",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: null,
-        effectType: null,
-        effectStrength: null
+        effectType: heatResistance,
+        effectStrength: 1
     },
     {
         name: "Courser Bee Honey",
@@ -479,9 +479,9 @@ let ingredients = [
         name: "Hydromelon",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: heatResistance,
+        effectStrength: 1
     },
     {
         name: "Hylian Rice",
@@ -918,10 +918,10 @@ let ingredients = [
     {
         name: "Sizzlefin Trout",
         type: "food",
-        heartRestoration: 1,
+        heartRestoration: 2,
         timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        effectType: coldResistance,
+        effectStrength: 3
     },
     {
         name: "Smotherwing Butterfly",
@@ -943,9 +943,9 @@ let ingredients = [
         name: "Spicy Pepper",
         type: "food",
         heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        timeAdded: null,
+        effectType: coldResistance,
+        effectStrength: 1
     },
     {
         name: "Stamella Shroom",
@@ -998,10 +998,10 @@ let ingredients = [
     {
         name: "Sunshroom",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 2,
+        timeAdded: null,
+        effectType: coldResistance,
+        effectStrength: 2
     },
     {
         name: "Swift Carrot",
@@ -1062,18 +1062,18 @@ let ingredients = [
     {
         name: "Warm Darner",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: coldResistance,
+        effectStrength: 2
     },
     {
         name: "Warm Safflina",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: coldResistance,
+        effectStrength: 1
     },
     {
         name: "White Chuchu Jelly",
@@ -1094,10 +1094,10 @@ let ingredients = [
     {
         name: "Winterwing Butterfly",
         type: "critter",
-        heartRestoration: 1,
-        timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        heartRestoration: 0,
+        timeAdded: null,
+        effectType: heatResistance,
+        effectStrength: 1
     },
     {
         name: "Yellow Chuchu Jelly",
