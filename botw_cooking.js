@@ -190,7 +190,7 @@ let ingredients = [
     {
         name: "Bokoblin Guts",
         type: "monsterPart",
-        heartRestoration: 0,
+        heartRestoration: 190,
         timeAdded: null,
         effectType: null,
         effectStrength: null
@@ -495,7 +495,7 @@ let ingredients = [
         name: "Hinox Guts",
         type: "monsterPart",
         heartRestoration: 0,
-        timeAdded: 50,
+        timeAdded: 190,
         effectType: null,
         effectStrength: null
     },
@@ -575,7 +575,7 @@ let ingredients = [
         name: "Icy Lizalfos Tail",
         type: "monsterPart",
         heartRestoration: 0,
-        timeAdded: 50,
+        timeAdded: 190,
         effectType: null,
         effectStrength: null
     },
@@ -599,7 +599,7 @@ let ingredients = [
         name: "Keese Eyeball",
         type: "monsterPart",
         heartRestoration: 0,
-        timeAdded: 50,
+        timeAdded: 190,
         effectType: null,
         effectStrength: null
     },
@@ -623,7 +623,7 @@ let ingredients = [
         name: "Lizalfos Tail",
         type: "monsterPart",
         heartRestoration: 0,
-        timeAdded: 50,
+        timeAdded: 190,
         effectType: null,
         effectStrength: null
     },
@@ -639,7 +639,7 @@ let ingredients = [
         name: "Lynel Guts",
         type: "monsterPart",
         heartRestoration: 0,
-        timeAdded: 50,
+        timeAdded: 190,
         effectType: null,
         effectStrength: null
     },
@@ -703,7 +703,7 @@ let ingredients = [
         name: "Moblin Guts",
         type: "monsterPart",
         heartRestoration: 0,
-        timeAdded: 50,
+        timeAdded: 190,
         effectType: null,
         effectStrength: null
     },
@@ -727,7 +727,7 @@ let ingredients = [
         name: "Molduga Guts",
         type: "monsterPart",
         heartRestoration: 1,
-        timeAdded: 50,
+        timeAdded: 190,
         effectType: null,
         effectStrength: null
     },
@@ -862,8 +862,8 @@ let ingredients = [
     {
         name: "Red Lizalfos Tail",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 190,
         effectType: null,
         effectStrength: null
     },
@@ -1166,8 +1166,8 @@ let ingredients = [
     {
         name: "Yellow Lizalfos Tail",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 190,
         effectType: null,
         effectStrength: null
     },
