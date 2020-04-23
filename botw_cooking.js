@@ -123,7 +123,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: defenseUp,
+        effectType: "defenseUp",
         effectStrength: 1
     },
     {
@@ -131,7 +131,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: defenseUp,
+        effectType: "defenseUp",
         effectStrength: 2
     },
     {
@@ -139,7 +139,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: defenseUp,
+        effectType: "defenseUp",
         effectStrength: 3
     },
     {
@@ -147,7 +147,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: healthUp,
+        effectType: "healthUp",
         effectStrength: 5
     },
     {
@@ -155,7 +155,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: healthUp,
+        effectType: "healthUp",
         effectStrength: 4
     },
     {
@@ -171,7 +171,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: attackUp,
+        effectType: "attackUp",
         effectStrength: 1
     },
     {
@@ -179,7 +179,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: stealthUp,
+        effectType: "stealthUp",
         effectStrength: 1
     },
     {
@@ -211,7 +211,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: rejeuvenating,
+        effectType: "rejeuvenating",
         effectStrength: 2.8
     },
     {
@@ -235,7 +235,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: heatResistance,
+        effectType: "heatResistance",
         effectStrength: 3
     },
     {
@@ -243,7 +243,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: heatResistance,
+        effectType: "heatResistance",
         effectStrength: 2
     },
     {
@@ -259,7 +259,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: heatResistance,
+        effectType: "heatResistance",
         effectStrength: 2
     },
     {
@@ -267,7 +267,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: heatResistance,
+        effectType: "heatResistance",
         effectStrength: 1
     },
     {
@@ -275,7 +275,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 4,
         timeAdded: null,
-        effectType: rejeuvenating,
+        effectType: "rejeuvenating",
         effectStrength: 2.8
     },
     {
@@ -299,7 +299,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: shockResistance,
+        effectType: "shockResistance",
         effectStrength: 2
     },
     {
@@ -315,7 +315,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: shockResistance,
+        effectType: "shockResistance",
         effectStrength: 1
     },
     {
@@ -323,7 +323,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 4,
         timeAdded: 50,
-        effectType: staminaUp,
+        effectType: "staminaUp",
         effectStrength: 2
     },
     {
@@ -331,7 +331,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: staminaUp,
+        effectType: "staminaUp",
         effectStrength: 0.5
     },
     {
@@ -339,7 +339,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: rejeuvenating,
+        effectType: "rejeuvenating",
         effectStrength: 8.4
     },
     {
@@ -379,7 +379,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: flameGuard,
+        effectType: "flameGuard",
         effectStrength: 1
     },
     {
@@ -387,7 +387,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: speedUp,
+        effectType: "speedUp",
         effectStrength: 2
     },
     {
@@ -395,7 +395,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: defenseUp,
+        effectType: "defenseUp",
         effectStrength: 2
     },
     {
@@ -435,7 +435,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: healthUp,
+        effectType: "healthUp",
         effectStrength: 2
     },
     {
@@ -443,7 +443,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: healthUp,
+        effectType: "healthUp",
         effectStrength: 3
     },
     {
@@ -451,7 +451,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: healthUp,
+        effectType: "healthUp",
         effectStrength: 4
     },
     {
@@ -459,7 +459,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: healthUp,
+        effectType: "healthUp",
         effectStrength: 4
     },
     {
@@ -467,7 +467,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: healthUp,
+        effectType: "healthUp",
         effectStrength: 3
     },
     {
@@ -475,7 +475,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: healthUp,
+        effectType: "healthUp",
         effectStrength: 4
     },
     {
@@ -483,7 +483,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: healthUp,
+        effectType: "healthUp",
         effectStrength: 1
     },
     {
@@ -491,7 +491,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: speedUp,
+        effectType: "speedUp",
         effectStrength: 1
     },
     {
@@ -523,7 +523,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: speedUp,
+        effectType: "speedUp",
         effectStrength: 2
     },
     {
@@ -531,7 +531,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: heatResistance,
+        effectType: "heatResistance",
         effectStrength: 1
     },
     {
@@ -587,7 +587,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: defenseUp,
+        effectType: "defenseUp",
         effectStrength: 2
     },
     {
@@ -595,7 +595,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: defenseUp,
+        effectType: "defenseUp",
         effectStrength: 2
     },
     {
@@ -667,7 +667,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: attackUp,
+        effectType: "attackUp",
         effectStrength: 2
     },
     {
@@ -675,7 +675,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: attackUp,
+        effectType: "attackUp",
         effectStrength: 2
     },
     {
@@ -683,7 +683,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: attackUp,
+        effectType: "attackUp",
         effectStrength: 3
     },
     {
@@ -691,7 +691,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: attackUp,
+        effectType: "attackUp",
         effectStrength: 1
     },
     {
@@ -843,7 +843,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: attackUp,
+        effectType: "attackUp",
         effectStrength: 2
     },
     {
@@ -851,7 +851,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: attackUp,
+        effectType: "attackUp",
         effectStrength: 2
     },
     {
@@ -875,7 +875,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: 50,
-        effectType: rejeuvenating,
+        effectType: "rejeuvenating",
         effectStrength: 1.4
     },
     {
@@ -891,7 +891,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: defenseUp,
+        effectType: "defenseUp",
         effectStrength: 1
     },
     {
@@ -899,7 +899,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: speedUp,
+        effectType: "speedUp",
         effectStrength: 1
     },
     {
@@ -963,7 +963,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: stealthUp,
+        effectType: "stealthUp",
         effectStrength: 3
     },
     {
@@ -971,7 +971,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: stealthUp,
+        effectType: "stealthUp",
         effectStrength: 2
     },
     {
@@ -979,7 +979,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: 50,
-        effectType: coldResistance,
+        effectType: "coldResistance",
         effectStrength: 3
     },
     {
@@ -987,7 +987,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: flameGuard,
+        effectType: "flameGuard",
         effectStrength: 2
     },
     {
@@ -995,7 +995,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: stealthUp,
+        effectType: "stealthUp",
         effectStrength: 1
     },
     {
@@ -1003,7 +1003,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: coldResistance,
+        effectType: "coldResistance",
         effectStrength: 1
     },
     {
@@ -1011,7 +1011,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: rejeuvenating,
+        effectType: "rejeuvenating",
         effectStrength: 1.4
     },
     {
@@ -1019,7 +1019,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: rejeuvenating,
+        effectType: "rejeuvenating",
         effectStrength: 5.6
     },
     {
@@ -1035,7 +1035,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: stealthUp,
+        effectType: "stealthUp",
         effectStrength: 2
     },
     {
@@ -1051,7 +1051,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: stealthUp,
+        effectType: "stealthUp",
         effectStrength: 1
     },
     {
@@ -1059,7 +1059,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 2,
         timeAdded: null,
-        effectType: coldResistance,
+        effectType: "coldResistance",
         effectStrength: 2
     },
     {
@@ -1067,7 +1067,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: speedUp,
+        effectType: "speedUp",
         effectStrength: 1
     },
     {
@@ -1075,7 +1075,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: speedUp,
+        effectType: "speedUp",
         effectStrength: 2
     },
     {
@@ -1091,7 +1091,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: shockResistance,
+        effectType: "shockResistance",
         effectStrength: 1
     },
     {
@@ -1099,7 +1099,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 4,
         timeAdded: 50,
-        effectType: staminaUp,
+        effectType: "staminaUp",
         effectStrength: 1
     },
     {
@@ -1115,7 +1115,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: shockResistance,
+        effectType: "shockResistance",
         effectStrength: 1
     },
     {
@@ -1123,7 +1123,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: coldResistance,
+        effectType: "coldResistance",
         effectStrength: 2
     },
     {
@@ -1131,7 +1131,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: coldResistance,
+        effectType: "coldResistance",
         effectStrength: 1
     },
     {
@@ -1155,7 +1155,7 @@ let ingredients = [
         type: "critter",
         heartRestoration: 0,
         timeAdded: null,
-        effectType: heatResistance,
+        effectType: "heatResistance",
         effectStrength: 1
     },
     {
@@ -1179,7 +1179,7 @@ let ingredients = [
         type: "food",
         heartRestoration: 1,
         timeAdded: null,
-        effectType: shockResistance,
+        effectType: "shockResistance",
         effectStrength: 2
     },
 ];
