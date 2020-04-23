@@ -1186,23 +1186,25 @@ let ingredients = [
 
 let selectorOptions = "<option value = 'Nothing'>Nothing</option>";
  for (let i = 0; i < ingredients.length; i++){
-     selectorOptions += ("<option value = '" + ingredients[i].name + "'>" + ingredients[i].name + "</option>");
+    selectorOptions += ("<option value = '" + JSON.stringify(ingredients[i]) + "'>" + ingredients[i].name + "</option>");
  }
 Array.prototype.forEach.call(selectors,function(selector){
     selector.innerHTML = selectorOptions;
 });
-
 function cook(ingredients){
-    console.log("Cooking with ingredients: " + ingredients);
+    console.log(ingredients[0]);
+    console.log("cooking with ingredients: ", ingredients);
 }
 
 cookButton.addEventListener("click", function(){
     let ingredients = [];
     Array.prototype.forEach.call(selectors,function(selector){
-        console.log(selector.value);
         if(selector.value !== 'Nothing'){
-            ingredients.push(selector.value);
+            console.log(typeof(selector.value))
+            console.log(JSON.parse(selector.value).name);
+            ingredients.push(JSON.parse(selector.value));
         }
+        console.log(ingredients);
         cook(ingredients);
     });
-})
+});
