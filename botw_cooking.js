@@ -1,5 +1,5 @@
 const selectors = document.getElementsByClassName("ingredientSelector");
-console.log(selectors);
+const cookButton = document.getElementById("cookButton");
 
 let effects = {
     heatResistance: {
@@ -1189,7 +1189,20 @@ let selectorOptions = "<option value = 'Nothing'>Nothing</option>";
      selectorOptions += ("<option value = '" + ingredients[i].name + "'>" + ingredients[i].name + "</option>");
  }
 Array.prototype.forEach.call(selectors,function(selector){
-    console.log(selector);
     selector.innerHTML = selectorOptions;
 });
-console.log(selectors);
+
+function cook(ingredients){
+    console.log("Cooking with ingredients: " + ingredients);
+}
+
+cookButton.addEventListener("click", function(){
+    let ingredients = [];
+    Array.prototype.forEach.call(selectors,function(selector){
+        console.log(selector.value);
+        if(selector.value !== 'Nothing'){
+            ingredients.push(selector.value);
+        }
+        cook(ingredients);
+    });
+})
