@@ -342,8 +342,8 @@ let ingredients = [
     {
         name: "Fairy",
         type: "food",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 10,
+        timeAdded: 30,
         effectType: null,
         effectStrength: null
     },
@@ -734,7 +734,7 @@ let ingredients = [
     {
         name: "Monster Extract",
         type: "monsterExtract",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: null,
         effectType: null,
         effectStrength: null
@@ -1022,10 +1022,10 @@ let ingredients = [
     {
         name: "Star Fragment",
         type: "food",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: 50,
         effectType: null,
-        effectStrength: null
+        effectStrength: 20
     },
     {
         name: "Stealthfin Trout",
@@ -1179,4 +1179,5 @@ let ingredients = [
         effectType: shockResistance,
         effectStrength: 2
     },
-]
+];
+
