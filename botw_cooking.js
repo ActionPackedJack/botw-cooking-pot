@@ -1,3 +1,6 @@
+const selectors = document.getElementsByClassName("ingredientSelector");
+console.log(selectors);
+
 let effects = {
     heatResistance: {
         name: "heat resistance",
