@@ -181,16 +181,16 @@ let ingredients = [
     },
     {
         name: "Bokoblin Fang",
-        type: "food",
-        heartRestoration: 1,
-        timeAdded: null,
+        type: "monsterPart",
+        heartRestoration: 0,
+        timeAdded: 110,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Bokoblin Guts",
-        type: "food",
-        heartRestoration: 1,
+        type: "monsterPart",
+        heartRestoration: 0,
         timeAdded: null,
         effectType: null,
         effectStrength: null
@@ -302,8 +302,8 @@ let ingredients = [
     {
         name: "Electric Keese Wing",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 110,
         effectType: null,
         effectStrength: null
     },
@@ -366,8 +366,8 @@ let ingredients = [
     {
         name: "Fire Keese Wing",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 110,
         effectType: null,
         effectStrength: null
     },
@@ -494,7 +494,7 @@ let ingredients = [
     {
         name: "Hinox Guts",
         type: "monsterPart",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: 50,
         effectType: null,
         effectStrength: null
@@ -510,8 +510,8 @@ let ingredients = [
     {
         name: "Hinox Tooth",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 110,
         effectType: null,
         effectStrength: null
     },
@@ -566,15 +566,15 @@ let ingredients = [
     {
         name: "Ice Keese Wing",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 110,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Icy Lizalfos Tail",
         type: "monsterPart",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: 50,
         effectType: null,
         effectStrength: null
@@ -598,7 +598,7 @@ let ingredients = [
     {
         name: "Keese Eyeball",
         type: "monsterPart",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: 50,
         effectType: null,
         effectStrength: null
@@ -622,15 +622,23 @@ let ingredients = [
     {
         name: "Lizalfos Tail",
         type: "monsterPart",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: 50,
+        effectType: null,
+        effectStrength: null
+    },
+    {
+        name: "Lizalfos Talon",
+        type: "monsterPart",
+        heartRestoration: 0,
+        timeAdded: 110,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Lynel Guts",
         type: "monsterPart",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: 50,
         effectType: null,
         effectStrength: null
@@ -638,7 +646,7 @@ let ingredients = [
     {
         name: "Lynel Hoof",
         type: "monsterPart",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: 50,
         effectType: null,
         effectStrength: null
@@ -686,15 +694,15 @@ let ingredients = [
     {
         name: "Moblin Fang",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 110,
         effectType: null,
         effectStrength: null
     },
     {
         name: "Moblin Guts",
         type: "monsterPart",
-        heartRestoration: 1,
+        heartRestoration: 0,
         timeAdded: 50,
         effectType: null,
         effectStrength: null
@@ -710,8 +718,8 @@ let ingredients = [
     {
         name: "Molduga Fin",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 110,
         effectType: null,
         effectStrength: null
     },
@@ -758,8 +766,8 @@ let ingredients = [
     {
         name: "Octorok Eyeball",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 110,
         effectType: null,
         effectStrength: null
     },
@@ -846,8 +854,8 @@ let ingredients = [
     {
         name: "Red Chuchu Jelly",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 110,
         effectType: null,
         effectStrength: null
     },
@@ -1126,8 +1134,8 @@ let ingredients = [
     {
         name: "White Chuchu Jelly",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 110,
         effectType: null,
         effectStrength: null
     },
@@ -1150,8 +1158,8 @@ let ingredients = [
     {
         name: "Yellow Chuchu Jelly",
         type: "monsterPart",
-        heartRestoration: 1,
-        timeAdded: 50,
+        heartRestoration: 0,
+        timeAdded: 110,
         effectType: null,
         effectStrength: null
     },
