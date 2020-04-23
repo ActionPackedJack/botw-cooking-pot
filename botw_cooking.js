@@ -1184,3 +1184,12 @@ let ingredients = [
     },
 ];
 
+let selectorOptions = "<option value = 'Nothing'>Nothing</option>";
+ for (let i = 0; i < ingredients.length; i++){
+     selectorOptions += ("<option value = '" + ingredients[i].name + "'>" + ingredients[i].name + "</option>");
+ }
+Array.prototype.forEach.call(selectors,function(selector){
+    console.log(selector);
+    selector.innerHTML = selectorOptions;
+});
+console.log(selectors);
