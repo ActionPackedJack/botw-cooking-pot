@@ -1193,6 +1193,10 @@ Array.prototype.forEach.call(selectors,function(selector){
     selector.innerHTML = selectorOptions;
 });
 function cook(ingredients){
+    if(ingredients.length === 0){
+        result.innerText = "Select some ingredients to get started.";
+        return;
+    }
     if(dubiousCheck(ingredients) === true){
         result.innerText = "Result: Dubious Food";
         return;
