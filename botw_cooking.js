@@ -1,5 +1,6 @@
 const selectors = document.getElementsByClassName("ingredientSelector");
 const cookButton = document.getElementById("cookButton");
+const result = document.getElementById("result")
 
 let effects = {
     heatResistance: {
@@ -1192,19 +1193,72 @@ Array.prototype.forEach.call(selectors,function(selector){
     selector.innerHTML = selectorOptions;
 });
 function cook(ingredients){
-    console.log(ingredients[0]);
-    console.log("cooking with ingredients: ", ingredients);
+    let analysis = analyzeIngredients(ingredients);
+    console.log("analysis", analysis);
+    if(dubiousCheck(analysis) === true){
+        result.innerText = "Result: Dubious Food";
+        return;
+    }
 }
 
 cookButton.addEventListener("click", function(){
     let ingredients = [];
     Array.prototype.forEach.call(selectors,function(selector){
         if(selector.value !== 'Nothing'){
-            console.log(typeof(selector.value))
-            console.log(JSON.parse(selector.value).name);
             ingredients.push(JSON.parse(selector.value));
         }
-        console.log(ingredients);
-        cook(ingredients);
     });
+    cook(ingredients);
 });
+
+function analyzeIngredients(ingredients){
+    console.log("ingredients: ", ingredients);
+    console.log("ingredients.length", ingredients.length);
+    let result = {
+        hasMonsterPart:false,
+        hasCritter:false,
+        notJustSalt:false,
+        hasFood:false
+    };
+    for(let i = 0; i < ingredients.length; i++){
+        if(ingredients[i].name !== "Rock Salt"){
+            result.notJustSalt = true;
+        }
+        if(ingredients[i].type === "critter"){
+            result.hasCritter = true;
+            console.log("Critter found. hasCritter: ", result.hasCritter);
+        }
+        if(ingredients[i].type === "monsterPart"){
+            result.hasMonsterPart = true;
+            console.log("Monster part found. hasMonsterPart: ", result.hasMonsterPart);
+        }
+        if(ingredients[i].type === "food"){
+            result.hasFood = true;
+            console.log("Food found.  hasFood: ", result.hasFood);
+        }
+    }
+    console.log("exiting analysis with the following results: ", result);
+    return result;
+}
+
+function dubiousCheck(analysis){
+    console.log(analysis);
+    // let hasMonsterPart = false;
+    // let hasFood = false;
+    // let hasCritter = false;
+    // let notJustSalt = false;
+    if(analysis.hasCritter === true && analysis.hasMonsterPart === false){
+        console.log("Critter but no monster part.");
+        return true;
+    }
+    if(analysis.hasMonsterPart === true && analysis.hasCritter === false){
+        console.log("Monster part but no critter.");
+        return true;
+    }
+    if(analysis.notJustSalt === false){
+        console.log("Only salt.");
+        console.log
+        return true;
+    }
+    return false;
+}
