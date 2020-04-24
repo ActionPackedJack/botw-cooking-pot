@@ -1193,9 +1193,7 @@ Array.prototype.forEach.call(selectors,function(selector){
     selector.innerHTML = selectorOptions;
 });
 function cook(ingredients){
-    let analysis = analyzeIngredients(ingredients);
-    console.log("analysis", analysis);
-    if(dubiousCheck(analysis) === true){
+    if(dubiousCheck(ingredients) === true){
         result.innerText = "Result: Dubious Food";
         return;
     }
@@ -1211,10 +1209,8 @@ cookButton.addEventListener("click", function(){
     cook(ingredients);
 });
 
-function analyzeIngredients(ingredients){
-    console.log("ingredients: ", ingredients);
-    console.log("ingredients.length", ingredients.length);
-    let result = {
+function dubiousCheck(ingredients){
+    let analysis = {
         hasMonsterPart:false,
         hasCritter:false,
         notJustSalt:false,
@@ -1222,31 +1218,21 @@ function analyzeIngredients(ingredients){
     };
     for(let i = 0; i < ingredients.length; i++){
         if(ingredients[i].name !== "Rock Salt"){
-            result.notJustSalt = true;
+            analysis.notJustSalt = true;
         }
         if(ingredients[i].type === "critter"){
-            result.hasCritter = true;
-            console.log("Critter found. hasCritter: ", result.hasCritter);
+            analysis.hasCritter = true;
+            console.log("Critter found. hasCritter: ", analysis.hasCritter);
         }
         if(ingredients[i].type === "monsterPart"){
-            result.hasMonsterPart = true;
-            console.log("Monster part found. hasMonsterPart: ", result.hasMonsterPart);
+            analysis.hasMonsterPart = true;
+            console.log("Monster part found. hasMonsterPart: ", analysis.hasMonsterPart);
         }
         if(ingredients[i].type === "food"){
-            result.hasFood = true;
-            console.log("Food found.  hasFood: ", result.hasFood);
+            analysis.hasFood = true;
+            console.log("Food found.  hasFood: ", analysis.hasFood);
         }
     }
-    console.log("exiting analysis with the following results: ", result);
-    return result;
-}
-
-function dubiousCheck(analysis){
-    console.log(analysis);
-    // let hasMonsterPart = false;
-    // let hasFood = false;
-    // let hasCritter = false;
-    // let notJustSalt = false;
     if(analysis.hasCritter === true && analysis.hasMonsterPart === false){
         console.log("Critter but no monster part.");
         return true;
