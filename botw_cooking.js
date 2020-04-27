@@ -1256,27 +1256,29 @@ function cook(ingredients){
             dish.effectSeconds += ingredients[i].timeAdded;
         }
     }
-    if(effects[dish.effectType].name.indexOf("wheels") !== -1){
-        dish.effectStrength /= 5;
-    }
-    if(effects[dish.effectType].t2Min !==null){
-        if(effects[dish.effectType].t3Min === 1000){
-            if(dish.effectStrength >= effects[dish.effectType].t2Min){
-                dish.effectString = "full";
-            }
-            else{
-                dish.effectString = "partial";
-            }
+    if(dish.effectType !== null){
+        if(effects[dish.effectType].name.indexOf("wheels") !== -1){
+            dish.effectStrength /= 5;
         }
-        else{
-            if(dish.effectStrength >= effects[dish.effectType].t3Min){
-                dish.effectString = "high-level";
-            }
-            else if (dish.effectStrength >= effects[dish.effectType].t2Min){
-                dish.effectString = "mid-level";
+        if(effects[dish.effectType].t2Min !==null){
+            if(effects[dish.effectType].t3Min === 1000){
+                if(dish.effectStrength >= effects[dish.effectType].t2Min){
+                    dish.effectString = "full";
+                }
+                else{
+                    dish.effectString = "partial";
+                }
             }
             else{
-                dish.effectString = "low-level";
+                if(dish.effectStrength >= effects[dish.effectType].t3Min){
+                    dish.effectString = "high-level";
+                }
+                else if (dish.effectStrength >= effects[dish.effectType].t2Min){
+                    dish.effectString = "mid-level";
+                }
+                else{
+                    dish.effectString = "low-level";
+                }
             }
         }
     }
