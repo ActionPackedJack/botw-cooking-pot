@@ -1,6 +1,8 @@
 const selectors = document.getElementsByClassName("ingredientSelector");
 const cookButton = document.getElementById("cookButton");
-const result = document.getElementById("result")
+const resultError = document.getElementById("resultError");
+const resultHearts = document.getElementById("resultHearts");
+const resultEffect = document.getElementById("resultEffect");
 
 let effects = {
     heatResistance: {
@@ -37,7 +39,7 @@ let effects = {
         name: "defense boost",
         t2Min: 5,
         t3Min: 7,
-        timeAdded: 7
+        timeAdded: 50
     },
     stealthUp: {
         name: "stealth boost",
@@ -53,12 +55,15 @@ let effects = {
     },
     healthUp: {
         name: "bonus temporary hearts and full health recovery",
+        t2Min: null
     },
     staminaUp: {
         name: "bonus stamina wheels and full stamina recovery",
+        t2Min: null
     },
     rejeuvenating: {
-        name: "wheels of stamina recovery"
+        name: "wheels of stamina recovery",
+        t2Min: null
     }
 };
 
@@ -69,7 +74,7 @@ let ingredients = [
         heartRestoration: 1,
         timeAdded: 50,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Ancient Core",
@@ -77,7 +82,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 190,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Ancient Gear",
@@ -85,7 +90,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Ancient Screw",
@@ -93,7 +98,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 70,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Ancient Shaft",
@@ -101,7 +106,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Ancient Spring",
@@ -109,7 +114,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 70,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Apple",
@@ -117,7 +122,7 @@ let ingredients = [
         heartRestoration: 1,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Armoranth",
@@ -165,7 +170,7 @@ let ingredients = [
         heartRestoration: 2,
         timeAdded: 90,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Bladed Rhino Beetle",
@@ -189,7 +194,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Bokoblin Guts",
@@ -197,7 +202,7 @@ let ingredients = [
         heartRestoration: 190,
         timeAdded: null,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Bokoblin Horn",
@@ -205,7 +210,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 70,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Bright-Eyed Crab",
@@ -221,7 +226,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 80,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Chickaloo Tree Nut",
@@ -229,7 +234,7 @@ let ingredients = [
         heartRestoration: 1,
         timeAdded: 40,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Chillfin Trout",
@@ -253,7 +258,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 70,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Cold Darner",
@@ -285,7 +290,7 @@ let ingredients = [
         heartRestoration: 2,
         timeAdded: 210,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Dinraal's Scale",
@@ -293,7 +298,7 @@ let ingredients = [
         heartRestoration: 1.25,
         timeAdded: 90,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Electric Darner",
@@ -309,7 +314,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Electric Safflina",
@@ -349,7 +354,7 @@ let ingredients = [
         heartRestoration: 10,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Farosh's Claw",
@@ -357,7 +362,7 @@ let ingredients = [
         heartRestoration: 2,
         timeAdded: 210,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Farosh's Scale",
@@ -365,7 +370,7 @@ let ingredients = [
         heartRestoration: 1.25,
         timeAdded: 90,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Fire Keese Wing",
@@ -373,7 +378,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Fireproof Lizard",
@@ -405,7 +410,7 @@ let ingredients = [
         heartRestoration: 1,
         timeAdded: 80,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Giant Ancient Core",
@@ -413,7 +418,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 190,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Goat Butter",
@@ -421,7 +426,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 80,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Goron Spice",
@@ -429,7 +434,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 90,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Hearty Bass",
@@ -501,7 +506,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 190,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Hinox Toenail",
@@ -509,7 +514,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 70,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Hinox Tooth",
@@ -517,7 +522,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Hot-footed Frog",
@@ -541,7 +546,7 @@ let ingredients = [
         heartRestoration: 2,
         timeAdded: 60,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Hylian Shroom",
@@ -549,7 +554,7 @@ let ingredients = [
         heartRestoration: 1,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Hyrule Bass",
@@ -557,7 +562,7 @@ let ingredients = [
         heartRestoration: 2,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Hyrule Herb",
@@ -565,7 +570,7 @@ let ingredients = [
         heartRestoration: 2,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Ice Keese Wing",
@@ -573,7 +578,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Icy Lizalfos Tail",
@@ -581,7 +586,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 190,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Ironshell Crab",
@@ -605,7 +610,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 190,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Keese Wing",
@@ -613,7 +618,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 70,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Lizalfos Horn",
@@ -621,7 +626,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 70,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Lizalfos Tail",
@@ -629,7 +634,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 190,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Lizalfos Talon",
@@ -637,7 +642,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Lynel Guts",
@@ -645,7 +650,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 190,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Lynel Hoof",
@@ -653,7 +658,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 50,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Lynel Horn",
@@ -661,7 +666,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 70,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Mighty Bananas",
@@ -701,7 +706,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Moblin Guts",
@@ -709,7 +714,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 190,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Moblin Horn",
@@ -717,7 +722,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 70,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Molduga Fin",
@@ -725,7 +730,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Molduga Guts",
@@ -733,7 +738,7 @@ let ingredients = [
         heartRestoration: 1,
         timeAdded: 190,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Monster Extract",
@@ -741,7 +746,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: null,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Naydra's Claw",
@@ -749,7 +754,7 @@ let ingredients = [
         heartRestoration: 2,
         timeAdded: 210,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Naydra's Scale",
@@ -757,7 +762,7 @@ let ingredients = [
         heartRestoration: 1.25,
         timeAdded: 90,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Octo Balloon",
@@ -765,7 +770,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 70,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Octorok Eyeball",
@@ -773,7 +778,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Octorok Tentacle",
@@ -781,7 +786,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 50,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Palm Fruit",
@@ -789,7 +794,7 @@ let ingredients = [
         heartRestoration: 2,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Raw Bird Drumstick",
@@ -797,7 +802,7 @@ let ingredients = [
         heartRestoration: 2,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Raw Bird Thigh",
@@ -805,7 +810,7 @@ let ingredients = [
         heartRestoration: 3,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Raw Gourmet Meat",
@@ -813,7 +818,7 @@ let ingredients = [
         heartRestoration: 6,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Raw Meat",
@@ -821,7 +826,7 @@ let ingredients = [
         heartRestoration: 2,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Raw Prime Meat",
@@ -829,7 +834,7 @@ let ingredients = [
         heartRestoration: 3,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Raw Whole Bird",
@@ -837,7 +842,7 @@ let ingredients = [
         heartRestoration: 6,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Razorclaw Crab",
@@ -861,7 +866,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Red Lizalfos Tail",
@@ -869,7 +874,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 190,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Restless Cricket",
@@ -885,7 +890,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 60,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Rugged Rhino Beetle",
@@ -909,7 +914,7 @@ let ingredients = [
         heartRestoration: 2,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Shard of Dinraal's Fang",
@@ -917,7 +922,7 @@ let ingredients = [
         heartRestoration: 2.5,
         timeAdded: 630,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Shard of Dinraal's Horn",
@@ -925,7 +930,7 @@ let ingredients = [
         heartRestoration: 3.25,
         timeAdded: 1800,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Shard of Farosh's Fang",
@@ -933,7 +938,7 @@ let ingredients = [
         heartRestoration: 2.5,
         timeAdded: 630,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Shard of Farosh's Horn",
@@ -941,7 +946,7 @@ let ingredients = [
         heartRestoration: 3.25,
         timeAdded: 1800,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Shard of Naydra's Fang",
@@ -949,7 +954,7 @@ let ingredients = [
         heartRestoration: 2.5,
         timeAdded: 630,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Shard of Naydra's Horn",
@@ -957,7 +962,7 @@ let ingredients = [
         heartRestoration: 3.25,
         timeAdded: 1800,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Silent Princess",
@@ -1044,8 +1049,8 @@ let ingredients = [
         type: "critter",
         heartRestoration: 1,
         timeAdded: 50,
-        effectType: null,
-        effectStrength: null
+        effectType: "coldResistance",
+        effectStrength: 1
     },
     {
         name: "Sunset Firefly",
@@ -1085,7 +1090,7 @@ let ingredients = [
         heartRestoration: 2,
         timeAdded: 60,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Thunderwing Butterfly",
@@ -1109,7 +1114,7 @@ let ingredients = [
         heartRestoration: 1,
         timeAdded: 50,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Voltfruit",
@@ -1141,7 +1146,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Wildberry",
@@ -1149,7 +1154,7 @@ let ingredients = [
         heartRestoration: 1,
         timeAdded: 30,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Winterwing Butterfly",
@@ -1165,7 +1170,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 110,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Yellow Lizalfos Tail",
@@ -1173,7 +1178,7 @@ let ingredients = [
         heartRestoration: 0,
         timeAdded: 190,
         effectType: null,
-        effectStrength: null
+        effectStrength: 0
     },
     {
         name: "Zapshroom",
@@ -1194,13 +1199,74 @@ Array.prototype.forEach.call(selectors,function(selector){
 });
 function cook(ingredients){
     if(ingredients.length === 0){
-        result.innerText = "Select some ingredients to get started.";
+        resultHearts.innerText = "";
+        resultEffect.innerText = "";
+        resultError.innerText = "Select some ingredients to get started.";
         return;
     }
+    let dish = {
+        heartRestoration : 0,
+        effectSeconds : 0,
+        effectMinutes: 0, 
+        effectType : null,
+        effectStrength : 0,
+        effectString: null,
+    };
     if(dubiousCheck(ingredients) === true){
-        result.innerText = "Result: Dubious Food";
+        resultHearts.innerText = "";
+        resultEffect.innerText = "";
+        resultError.innerText = "Result: Dubious Food";
         return;
     }
+    for(let i = 0; i < ingredients.length; i++){
+        dish.heartRestoration += ingredients[i].heartRestoration;
+        if(ingredients[i]. effectType !== null){
+            dish.effectType = ingredients[i].effectType;
+            dish.effectSeconds += effects[ingredients[i].effectType].timeAdded;
+            dish.effectStrength += ingredients[i].effectStrength;
+        }
+        else if (ingredients[i].type === "food" && ingredients[i].effectType === null){
+            if(ingredients.indexOf(ingredients[i] === i)){
+                dish.effectSeconds += ingredients[i].effectTime;
+            }
+            else{
+                dish.effectSeconds += 30;
+            }
+        }
+        else{
+            dish.effectStrength+= ingredients[i].effectStrength;
+            dish.effectSeconds += ingredients[i].timeAdded;
+        }
+    }
+    if(effects[dish.effectType].t2Min !==null){
+        if(effects[dish.effectType].t3Min === 1000){
+            if(dish.effectStrength >= effects[dish.effectType].t2Min){
+                dish.effectString = "full";
+            }
+            else{
+                dish.effectString = "partial";
+            }
+        }
+        else{
+            if(dish.effectStrength >= effects[dish.effectType].t3Min){
+                dish.effectString = "high-level";
+            }
+            else if (dish.effectStrength >= effects[dish.effectType].t2Min){
+                dish.effectString = "mid-level";
+            }
+            else{
+                dish.effectString = "low-level";
+            }
+        }
+    }
+    console.log(dish);
+    while(dish.effectSeconds >= 60){
+        dish.effectMinutes ++;
+        dish.effectSeconds -=60;
+    }
+    resultError.innerText = "";
+    resultHearts.innerText = "Hearts restored: " + dish.heartRestoration;
+    resultEffect.innerText = "Effect: " + dish.effectMinutes + ":" + dish.effectSeconds + " of " + dish.effectString + " " + effects[dish.effectType].name;
 }
 
 cookButton.addEventListener("click", function(){
