@@ -1238,6 +1238,9 @@ function cook(ingredients){
             dish.effectSeconds += ingredients[i].timeAdded;
         }
     }
+    if(effects[dish.effectType].name.indexOf("wheels") !== -1){
+        dish.effectStrength /= 5;
+    }
     if(effects[dish.effectType].t2Min !==null){
         if(effects[dish.effectType].t3Min === 1000){
             if(dish.effectStrength >= effects[dish.effectType].t2Min){
@@ -1273,7 +1276,7 @@ function cook(ingredients){
         resultEffect.innerText = "Effect: " + dish.effectMinutes + ":" + dish.effectSeconds + " of " + dish.effectString + " " + effects[dish.effectType].name;
     }
     else{
-        resultEffect.innerText = "Effect: " + dish.effectStrength + " " + effects[dish.effectType].name;
+        resultEffect.innerText = "Effect: " + (dish.effectStrength + " " + effects[dish.effectType].name);
     }
 }
 
