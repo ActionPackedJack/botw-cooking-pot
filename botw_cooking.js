@@ -446,7 +446,7 @@ let ingredients = [
     },
     {
         name: "Hearty Blueshell Snail",
-        type: "critter",
+        type: "food",
         heartRestoration: 0,
         timeAdded: null,
         effectType: "healthUp",
@@ -1266,7 +1266,15 @@ function cook(ingredients){
     }
     resultError.innerText = "";
     resultHearts.innerText = "Hearts restored: " + dish.heartRestoration;
-    resultEffect.innerText = "Effect: " + dish.effectMinutes + ":" + dish.effectSeconds + " of " + dish.effectString + " " + effects[dish.effectType].name;
+    if(dish.effectType === null){
+        resultEffect.innerText = "";
+    }
+    else if(dish.effectMinutes > 0 || dish.effectSeconds > 0){
+        resultEffect.innerText = "Effect: " + dish.effectMinutes + ":" + dish.effectSeconds + " of " + dish.effectString + " " + effects[dish.effectType].name;
+    }
+    else{
+        resultEffect.innerText = "Effect: " + dish.effectStrength + " " + effects[dish.effectType].name;
+    }
 }
 
 cookButton.addEventListener("click", function(){
