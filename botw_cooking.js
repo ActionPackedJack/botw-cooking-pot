@@ -1,8 +1,10 @@
 const selectors = document.getElementsByClassName("ingredientSelector");
 const cookButton = document.getElementById("cookButton");
+const copyButton = document.getElementById("copyButton");
 const resultError = document.getElementById("resultError");
 const resultHearts = document.getElementById("resultHearts");
 const resultEffect = document.getElementById("resultEffect");
+let lastSelection = null;
 
 let effects = {
     heatResistance: {
@@ -1196,7 +1198,23 @@ let selectorOptions = "<option value = 'Nothing'>Nothing</option>";
  }
 Array.prototype.forEach.call(selectors,function(selector){
     selector.innerHTML = selectorOptions;
+    selector.addEventListener('change', (event) => {
+        lastSelection = event.target.value;
+    })
 });
+
+function copy(){
+    Array.prototype.forEach.call(selectors, function(selector){
+        if(selector.value === 'Nothing'){
+            selector.value = lastSelection;
+        }
+    })
+}
+
+copyButton.addEventListener("click", function(){
+    copy();
+})
+
 function cook(ingredients){
     if(ingredients.length === 0){
         resultHearts.innerText = "";
