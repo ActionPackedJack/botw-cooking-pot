@@ -1194,7 +1194,13 @@ let ingredients = [
 
 let selectorOptions = "<option value = 'Nothing'>Nothing</option>";
  for (let i = 0; i < ingredients.length; i++){
-    selectorOptions += ("<option value = '" + JSON.stringify(ingredients[i]) + "'>" + ingredients[i].name + "</option>");
+    let pushedIngredient = ingredients[i];
+    let apostrophe = ingredients[i].name.indexOf("'");
+    if(apostrophe !==-1){
+        pushedIngredient.name = ingredients[i].name.slice(0, apostrophe) + "\u2019" + ingredients[i].name.slice(apostrophe + 1, ingredients[i].name.length);
+    }
+    console.log (pushedIngredient.name);
+    selectorOptions += ("<option value = '" + JSON.stringify(pushedIngredient) + "'>" + pushedIngredient.name + "</option>");
  }
 Array.prototype.forEach.call(selectors,function(selector){
     selector.innerHTML = selectorOptions;
@@ -1245,7 +1251,6 @@ function cook(ingredients){
             dish.effectStrength += ingredients[i].effectStrength;
         }
         else if (ingredients[i].type === "food" && ingredients[i].effectType === null){
-            console.log("Found " + ingredients[i].name);
             if(ingredients.indexOf(ingredients[i] === i)){
                 dish.effectSeconds += ingredients[i].timeAdded;
             }
@@ -1307,6 +1312,8 @@ cookButton.addEventListener("click", function(){
     let ingredients = [];
     Array.prototype.forEach.call(selectors,function(selector){
         if(selector.value !== 'Nothing'){
+            console.log((selector.value));
+            //console.log(selector.value.name.indexOf("'"));
             ingredients.push(JSON.parse(selector.value));
         }
     });
