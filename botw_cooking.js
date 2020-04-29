@@ -1241,11 +1241,13 @@ function cook(ingredients){
         if(ingredients[i]. effectType !== null){
             dish.effectType = ingredients[i].effectType;
             dish.effectSeconds += effects[ingredients[i].effectType].timeAdded;
+            console.log ("Adding " + effects[ingredients[i].effectType].timeAdded + " of " + ingredients[i].effectType + ". effectSeconds: " + dish.effectSeconds);
             dish.effectStrength += ingredients[i].effectStrength;
         }
         else if (ingredients[i].type === "food" && ingredients[i].effectType === null){
+            console.log("Found " + ingredients[i].name);
             if(ingredients.indexOf(ingredients[i] === i)){
-                dish.effectSeconds += ingredients[i].effectTime;
+                dish.effectSeconds += ingredients[i].timeAdded;
             }
             else{
                 dish.effectSeconds += 30;
@@ -1296,6 +1298,7 @@ function cook(ingredients){
         resultEffect.innerText = "Effect: " + dish.effectMinutes + ":" + dish.effectSeconds + " of " + dish.effectString + " " + effects[dish.effectType].name;
     }
     else{
+        console.log("minutes: " + dish.effectMinutes + "seconds: " + dish.effectSeconds);
         resultEffect.innerText = "Effect: " + (dish.effectStrength + " " + effects[dish.effectType].name);
     }
 }
@@ -1323,15 +1326,12 @@ function dubiousCheck(ingredients){
         }
         if(ingredients[i].type === "critter"){
             analysis.hasCritter = true;
-            console.log("Critter found. hasCritter: ", analysis.hasCritter);
         }
         if(ingredients[i].type === "monsterPart"){
             analysis.hasMonsterPart = true;
-            console.log("Monster part found. hasMonsterPart: ", analysis.hasMonsterPart);
         }
         if(ingredients[i].type === "food"){
             analysis.hasFood = true;
-            console.log("Food found.  hasFood: ", analysis.hasFood);
         }
     }
     if(analysis.hasCritter === true && analysis.hasMonsterPart === false){
