@@ -1290,6 +1290,9 @@ function cook(ingredients){
         }
     }
     console.log(dish);
+    if(dish.effectSeconds > 1800){
+        dish.effectSeconds = 1800;
+    }
     while(dish.effectSeconds >= 60){
         dish.effectMinutes ++;
         dish.effectSeconds -=60;
