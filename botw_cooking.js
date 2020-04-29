@@ -1235,6 +1235,7 @@ function cook(ingredients){
         effectType : null,
         effectStrength : 0,
         effectString: null,
+        extraZero: "",
     };
     if(dubiousCheck(ingredients) === true){
         resultHearts.innerText = "";
@@ -1297,16 +1298,18 @@ function cook(ingredients){
         dish.effectMinutes ++;
         dish.effectSeconds -=60;
     }
+    if(dish.effectSeconds === 0){
+        dish.extraZero += "0";
+    }
     resultError.innerText = "";
     resultHearts.innerText = "Hearts restored: " + dish.heartRestoration;
     if(dish.effectType === null){
         resultEffect.innerText = "";
     }
     else if(dish.effectMinutes > 0 || dish.effectSeconds > 0){
-        resultEffect.innerText = "Effect: " + dish.effectMinutes + ":" + dish.effectSeconds + " of " + dish.effectString + " " + effects[dish.effectType].name;
+        resultEffect.innerText = "Effect: " + dish.effectMinutes + ":" + dish.effectSeconds + dish.extraZero + " of " + dish.effectString + " " + effects[dish.effectType].name;
     }
     else{
-        console.log("minutes: " + dish.effectMinutes + "seconds: " + dish.effectSeconds);
         resultEffect.innerText = "Effect: " + (dish.effectStrength + " " + effects[dish.effectType].name);
     }
 }
