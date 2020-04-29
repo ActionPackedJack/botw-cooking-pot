@@ -1232,6 +1232,7 @@ function cook(ingredients){
         effectSeconds : 0,
         effectMinutes: 0, 
         effectType : null,
+        noEffect: false,
         effectStrength : 0,
         effectString: null,
         extraZero: "",
@@ -1244,7 +1245,10 @@ function cook(ingredients){
     }
     for(let i = 0; i < ingredients.length; i++){
         dish.heartRestoration += ingredients[i].heartRestoration;
-        if(ingredients[i]. effectType !== null){
+        if(ingredients[i].effectType !== null && dish.noEffect !== true){
+            if(dish.effectType !== null && ingredients[i].effectType !== dish.effectType){
+                dish.noEffect = true;
+            }
             dish.effectType = ingredients[i].effectType;
             dish.effectSeconds += effects[ingredients[i].effectType].timeAdded;
             // console.log ("Adding " + effects[ingredients[i].effectType].timeAdded + " of " + ingredients[i].effectType + ". effectSeconds: " + dish.effectSeconds);
@@ -1263,7 +1267,7 @@ function cook(ingredients){
             dish.effectSeconds += ingredients[i].timeAdded;
         }
     }
-    if(dish.effectType !== null){
+    if(dish.effectType !== null && dish.noEffect !== true){
         if(effects[dish.effectType].name.indexOf("wheels") !== -1){
             dish.effectStrength /= 5;
         }
@@ -1301,7 +1305,10 @@ function cook(ingredients){
     }
     resultError.innerText = "";
     resultHearts.innerText = "Hearts restored: " + dish.heartRestoration;
-    if(dish.effectType === null){
+    if(dish.noEffect === true){
+        resultEffect.innerText = "No effect. Conflicting ingredients used.";
+    }
+    else if(dish.effectType === null){
         resultEffect.innerText = "";
     }
     else if(dish.effectMinutes > 0 || dish.effectSeconds > 0){
