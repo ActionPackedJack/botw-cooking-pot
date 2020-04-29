@@ -1199,7 +1199,6 @@ let selectorOptions = "<option value = 'Nothing'>Nothing</option>";
     if(apostrophe !==-1){
         pushedIngredient.name = ingredients[i].name.slice(0, apostrophe) + "\u2019" + ingredients[i].name.slice(apostrophe + 1, ingredients[i].name.length);
     }
-    console.log (pushedIngredient.name);
     selectorOptions += ("<option value = '" + JSON.stringify(pushedIngredient) + "'>" + pushedIngredient.name + "</option>");
  }
 Array.prototype.forEach.call(selectors,function(selector){
@@ -1248,7 +1247,7 @@ function cook(ingredients){
         if(ingredients[i]. effectType !== null){
             dish.effectType = ingredients[i].effectType;
             dish.effectSeconds += effects[ingredients[i].effectType].timeAdded;
-            console.log ("Adding " + effects[ingredients[i].effectType].timeAdded + " of " + ingredients[i].effectType + ". effectSeconds: " + dish.effectSeconds);
+            // console.log ("Adding " + effects[ingredients[i].effectType].timeAdded + " of " + ingredients[i].effectType + ". effectSeconds: " + dish.effectSeconds);
             dish.effectStrength += ingredients[i].effectStrength;
         }
         else if (ingredients[i].type === "food" && ingredients[i].effectType === null){
@@ -1290,7 +1289,6 @@ function cook(ingredients){
             }
         }
     }
-    console.log(dish);
     if(dish.effectSeconds > 1800){
         dish.effectSeconds = 1800;
     }
@@ -1318,7 +1316,6 @@ cookButton.addEventListener("click", function(){
     let ingredients = [];
     Array.prototype.forEach.call(selectors,function(selector){
         if(selector.value !== 'Nothing'){
-            console.log((selector.value));
             //console.log(selector.value.name.indexOf("'"));
             ingredients.push(JSON.parse(selector.value));
         }
@@ -1357,7 +1354,6 @@ function dubiousCheck(ingredients){
     }
     if(analysis.notJustSalt === false){
         console.log("Only salt.");
-        console.log
         return true;
     }
     return false;
