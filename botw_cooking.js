@@ -1361,15 +1361,20 @@ cookButton.addEventListener("click", function(){
 });
 
 function dubiousCheck(ingredients){
+    let seasonings = ["Rock Salt", "Monster Extract", "Cane Sugar", "Tabantha Wheat", "Hylian Rice", "Goron Spice", "Goat Butter"];
     let analysis = {
         hasMonsterPart:false,
         hasCritter:false,
-        notJustSalt:false,
+        notJustSeasoning:false,
         hasFood:false
     };
     for(let i = 0; i < ingredients.length; i++){
-        if(ingredients[i].name !== "Rock Salt"){
-            analysis.notJustSalt = true;
+        if(analysis.notJustSeasoning === false){
+            if(seasonings.indexOf(ingredients[i].name) === -1){
+                console.log("Non-seasoning found!");
+                console.log (ingredients[i].name);
+                analysis.notJustSeasoning = true;
+            }
         }
         if(ingredients[i].type === "critter"){
             analysis.hasCritter = true;
@@ -1389,8 +1394,8 @@ function dubiousCheck(ingredients){
         console.log("Monster part but no critter.");
         return true;
     }
-    if(analysis.notJustSalt === false){
-        console.log("Only salt.");
+    if(analysis.notJustSeasoning === false){
+        console.log("Only seasoning.");
         return true;
     }
     return false;
