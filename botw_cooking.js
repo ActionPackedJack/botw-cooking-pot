@@ -1236,6 +1236,7 @@ function cook(ingredients){
         effectStrength : 0,
         effectString: null,
         extraZero: "",
+        hasMonsterExtract : false,
     };
     if(dubiousCheck(ingredients) === true){
         resultHearts.innerText = "";
@@ -1245,7 +1246,10 @@ function cook(ingredients){
     }
     for(let i = 0; i < ingredients.length; i++){
         dish.heartRestoration += ingredients[i].heartRestoration;
-        if(ingredients[i].effectType !== null && dish.noEffect !== true){
+        if(ingredients[i].type === "monsterExtract"){
+            dish.hasMonsterExtract = true;
+        }
+        else if(ingredients[i].effectType !== null && dish.noEffect !== true){
             if(dish.effectType !== null && ingredients[i].effectType !== dish.effectType){
                 dish.noEffect = true;
             }
@@ -1305,7 +1309,33 @@ function cook(ingredients){
     }
     resultError.innerText = "";
     resultHearts.innerText = "Hearts restored: " + dish.heartRestoration;
-    if(dish.noEffect === true){
+    if(dish.hasMonsterExtract === true){
+        console.log ("MONSTER EXTRACT");
+        dish.heartRestoration = ((dish.heartRestoration/4) + ", " + dish.heartRestoration + ", or " + (dish.heartRestoration + 3));
+        dish.effectSeconds = "1:00, 10:00 or 30:00";
+        if(dish.effectType !== null && dish.noEffect === false){
+            switch(dish.effectString){
+                case "low-level":
+                    dish.effectString = "(2/3 chance of low-level, 1/3 chance of mid-level)";
+                    break;
+                case "mid-level":
+                    dish.effectString = "(equal chance of low/mid/high-level)";
+                    break;
+                case "high-level":
+                    dish.effectString = "(2/3 chance of high-level, 1/3 chance of low-level)";
+                    break;
+                case "partial":
+                    dish.effectString = "(2/3 chance of partial, 1/3 chance of full)";
+                    break;
+                case "full":
+                    dish.effectString = ("2/3 chance of full, 1/3 chance of partial");
+                    break;
+            }
+            resultEffect.innerText = "Effect: " + dish.effectSeconds + " of " + dish.effectString + " " + effects[dish.effectType].name;
+        }
+        resultHearts.innerText = "Hearts restored: " + dish.heartRestoration;
+    }
+    else if(dish.noEffect === true){
         resultEffect.innerText = "No effect. Conflicting ingredients used.";
     }
     else if(dish.effectType === null){
