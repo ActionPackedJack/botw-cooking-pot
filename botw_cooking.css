@@ -1,4 +1,14 @@
 body{
     background-image: url("images/cooking_pot.jpg");
     background-repeat: no-repeat;
+    font-family: "Helvetica";
+}
+@font-face {
+    font-family: "Zelda";
+    src: url("The Wild Breath of Zelda.otf");
+}
+h1{
+    font-family: "Zelda";
+    text-align: center;
+    /* color: #f8f9da; */
 }
