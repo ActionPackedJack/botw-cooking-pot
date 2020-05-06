@@ -1,16 +1,22 @@
+//These connect our functions to html elements.
 const selectors = document.getElementsByClassName("ingredientSelector");
 const cookButton = document.getElementById("cookButton");
 const copyButton = document.getElementById("copyButton");
 const resultError = document.getElementById("resultError");
 const resultHearts = document.getElementById("resultHearts");
 const resultEffect = document.getElementById("resultEffect");
+//This tracks the most recent ingredient selected with ingredient selectors.
 let lastSelection = null;
-
+//Below is a database of the various effects a recipe can imbue.
 let effects = {
     heatResistance: {
+        //This is what it will be called in the html output.
         name: "heat resistance",
+        //This is the strength needed to produce a mid-level effect.  Any effect where this is set to null only has one level of strength.
         t2Min: 6,
+        //This is the strength needed to produce a high-level effect.  Any effect where this is set to 1000 only has two levels of strength.
         t3Min: 1000,
+        //This is how much time is added to the effect per effect-specific ingredient included.
         timeAdded: 150
     },
     coldResistance: {
@@ -68,14 +74,20 @@ let effects = {
         t2Min: null
     }
 };
-
+//The next 1100 lines or so establishes the properties of all our ingredients.
 let ingredients = [
     {
+        //The name as it appears in the selectors.
         name: "Acorn",
+        //Fairly self-explanatory.
         type: "food",
+        //How many hearts it adds to a cooked dish.
         heartRestoration: 1,
+        //How much time it adds to a dish with a timed effect.  Set to null if it is aligned with an effect.
         timeAdded: 50,
+        //The type of effect with which it is aligned.
         effectType: null,
+        //How much it adds to the strength of the effect.
         effectStrength: 0
     },
     {
@@ -1191,23 +1203,28 @@ let ingredients = [
         effectStrength: 2
     },
 ];
-
+//selectorOptions will become a list of all our ingredients.  First we manually populate it with a nothing option.
 let selectorOptions = "<option value = 'Nothing'>Nothing</option>";
+//Then we iterate through our ingredients and add them to the options.
  for (let i = 0; i < ingredients.length; i++){
     let pushedIngredient = ingredients[i];
+    //But first we check to see if there is an apostrophe in the name of the ingredient, because that will create errors due to terminating a string early.
     let apostrophe = ingredients[i].name.indexOf("'");
+    //If we find one, we replace it with a unicode character.
     if(apostrophe !==-1){
         pushedIngredient.name = ingredients[i].name.slice(0, apostrophe) + "\u2019" + ingredients[i].name.slice(apostrophe + 1, ingredients[i].name.length);
     }
     selectorOptions += ("<option value = '" + JSON.stringify(pushedIngredient) + "'>" + pushedIngredient.name + "</option>");
  }
+ //Then we add our selector options to each selector.
 Array.prototype.forEach.call(selectors,function(selector){
     selector.innerHTML = selectorOptions;
+    //This tells our last-ingredient-selected variable to update whenever we select something.
     selector.addEventListener('change', (event) => {
         lastSelection = event.target.value;
     })
 });
-
+//This populates our unassigned selectors with the last selected ingredient.
 function copy(){
     Array.prototype.forEach.call(selectors, function(selector){
         if(selector.value === 'Nothing'){
@@ -1215,49 +1232,65 @@ function copy(){
         }
     })
 }
-
+//And this assigns the above function to a button.
 copyButton.addEventListener("click", function(){
     copy();
 })
-
+//Main cook function.
 function cook(ingredients){
+    //This terminates the function early if no ingredients were selected.
     if(ingredients.length === 0){
         resultHearts.innerText = "";
         resultEffect.innerText = "";
         resultError.innerText = "Select some ingredients to get started.";
         return;
     }
+    //This sets up the stats of the resulting dish.
     let dish = {
+        //How many hearts will be restored.
         heartRestoration : 0,
+        //The effect time.
         effectSeconds : 0,
+        //In order to display the time properly, how many minutes the effect will last.
         effectMinutes: 0, 
+        //The effect type.
         effectType : null,
+        //Boolean to negate all effects if conflicting ingredients are added.
         noEffect: false,
+        //Strength of the effect.
         effectStrength : 0,
+        //Descriptor of the effect strength for output sake.
         effectString: null,
+        //This adds an extra zero to the seconds display if the meal has 0 seconds. 
         extraZero: "",
+        //You can figure this one out.
         hasMonsterExtract : false,
     };
+    //This terminates the function early if the recipe is invalid.
     if(dubiousCheck(ingredients) === true){
         resultHearts.innerText = "";
         resultEffect.innerText = "";
         resultError.innerText = "Result: Dubious Food";
         return;
     }
+    //If the recipe is valid, we iterate through the ingredients.
     for(let i = 0; i < ingredients.length; i++){
+        //This adds the heart value of the ingredient to the heart value of the dish.
         dish.heartRestoration += ingredients[i].heartRestoration;
         if(ingredients[i].type === "monsterExtract"){
             dish.hasMonsterExtract = true;
         }
         else if(ingredients[i].effectType !== null && dish.noEffect !== true){
+            //If this ingredient is associated with an effect different from what the dish already has, we set the boolean to ignore all effects in the final result.
             if(dish.effectType !== null && ingredients[i].effectType !== dish.effectType){
                 dish.noEffect = true;
             }
+            //This adds the effect type, time and strength of the ingredient.
             dish.effectType = ingredients[i].effectType;
             dish.effectSeconds += effects[ingredients[i].effectType].timeAdded;
-            // console.log ("Adding " + effects[ingredients[i].effectType].timeAdded + " of " + ingredients[i].effectType + ". effectSeconds: " + dish.effectSeconds);
             dish.effectStrength += ingredients[i].effectStrength;
         }
+        //For generic non-effect-aligned food, if multiples of the same ingredient are added, each one after the first only adds 30 seconds.
         else if (ingredients[i].type === "food" && ingredients[i].effectType === null){
             if(ingredients.indexOf(ingredients[i] === i)){
                 dish.effectSeconds += ingredients[i].timeAdded;
@@ -1271,10 +1304,12 @@ function cook(ingredients){
             dish.effectSeconds += ingredients[i].timeAdded;
         }
     }
+    //Dishes that restore or add maximum stamina deal with fifths of a wheel, so the strength is divided by five.
     if(dish.effectType !== null && dish.noEffect !== true){
         if(effects[dish.effectType].name.indexOf("wheels") !== -1){
             dish.effectStrength /= 5;
         }
+        //This compares the strength of the effect to the threshold for strength levels and assigns an appropriate strength descriptor to the final report.
         if(effects[dish.effectType].t2Min !==null){
             if(effects[dish.effectType].t3Min === 1000){
                 if(dish.effectStrength >= effects[dish.effectType].t2Min){
@@ -1297,20 +1332,24 @@ function cook(ingredients){
             }
         }
     }
+    //The maximum time an effect can last is 30 minutes.  This enforces that.
     if(dish.effectSeconds > 1800){
         dish.effectSeconds = 1800;
     }
+    //This converts the time into a figure of minutes and seconds.
     while(dish.effectSeconds >= 60){
         dish.effectMinutes ++;
         dish.effectSeconds -=60;
     }
+    //This prevents displays of "10:0" for dishes that last an even minute.
     if(dish.effectSeconds === 0){
         dish.extraZero += "0";
     }
     resultError.innerText = "";
+    //This sets the output to display health restoration.
     resultHearts.innerText = "Hearts restored: " + dish.heartRestoration;
+    //If monster extract was used, this reports all the random variations of the dish that could be made.
     if(dish.hasMonsterExtract === true){
-        console.log ("MONSTER EXTRACT");
         dish.heartRestoration = ((dish.heartRestoration/4) + ", " + dish.heartRestoration + ", or " + (dish.heartRestoration + 3));
         dish.effectSeconds = "1:00, 10:00 or 30:00";
         if(dish.effectType !== null && dish.noEffect === false){
@@ -1335,44 +1374,49 @@ function cook(ingredients){
         }
         resultHearts.innerText = "Hearts restored: " + dish.heartRestoration;
     }
+    //This invalidates the dish's effect if conflicting ingredients were found.
     else if(dish.noEffect === true){
         resultEffect.innerText = "No effect. Conflicting ingredients used.";
     }
+    //This clears the effect if the current dish does not have one, to keep from still displaying the previous dish's effect.
     else if(dish.effectType === null){
         resultEffect.innerText = "";
     }
+    //This displays any timed effects.
     else if(dish.effectMinutes > 0 || dish.effectSeconds > 0){
         resultEffect.innerText = "Effect: " + dish.effectMinutes + ":" + dish.effectSeconds + dish.extraZero + " of " + dish.effectString + " " + effects[dish.effectType].name;
     }
+    //And this displays health and stamina effects.
     else{
         resultEffect.innerText = "Effect: " + (dish.effectStrength + " " + effects[dish.effectType].name);
     }
 }
 
+//This assigns the above function to a button.
 cookButton.addEventListener("click", function(){
     let ingredients = [];
     Array.prototype.forEach.call(selectors,function(selector){
         if(selector.value !== 'Nothing'){
-            //console.log(selector.value.name.indexOf("'"));
             ingredients.push(JSON.parse(selector.value));
         }
     });
     cook(ingredients);
 });
-
+//This checks whether an ingredient is valid.
 function dubiousCheck(ingredients){
+    //The below ingredients must be cooked with something not on this list or the recipe will fail.
     let seasonings = ["Rock Salt", "Monster Extract", "Cane Sugar", "Tabantha Wheat", "Hylian Rice", "Goron Spice", "Goat Butter"];
     let analysis = {
+        //These two must either both be false or both be true.
         hasMonsterPart:false,
         hasCritter:false,
+        //And this must be true.
         notJustSeasoning:false,
-        hasFood:false
     };
     for(let i = 0; i < ingredients.length; i++){
+        //This checks whether the ingredient is something other than the above list.
         if(analysis.notJustSeasoning === false){
             if(seasonings.indexOf(ingredients[i].name) === -1){
-                console.log("Non-seasoning found!");
-                console.log (ingredients[i].name);
                 analysis.notJustSeasoning = true;
             }
         }
@@ -1382,21 +1426,17 @@ function dubiousCheck(ingredients){
         if(ingredients[i].type === "monsterPart"){
             analysis.hasMonsterPart = true;
         }
-        if(ingredients[i].type === "food"){
-            analysis.hasFood = true;
-        }
     }
+    //This checks whether any of our failure conditions are present.
     if(analysis.hasCritter === true && analysis.hasMonsterPart === false){
-        console.log("Critter but no monster part.");
         return true;
     }
     if(analysis.hasMonsterPart === true && analysis.hasCritter === false){
-        console.log("Monster part but no critter.");
         return true;
     }
     if(analysis.notJustSeasoning === false){
-        console.log("Only seasoning.");
         return true;
     }
+    //And if not, the cooking may continue.
     return false;
 }
