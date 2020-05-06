@@ -1226,11 +1226,13 @@ Array.prototype.forEach.call(selectors,function(selector){
 });
 //This populates our unassigned selectors with the last selected ingredient.
 function copy(){
-    Array.prototype.forEach.call(selectors, function(selector){
-        if(selector.value === 'Nothing'){
-            selector.value = lastSelection;
-        }
-    })
+    if(lastSelection !== null){
+        Array.prototype.forEach.call(selectors, function(selector){
+            if(selector.value === 'Nothing'){
+                selector.value = lastSelection;
+            }
+        })
+    }
 }
 //And this assigns the above function to a button.
 copyButton.addEventListener("click", function(){
