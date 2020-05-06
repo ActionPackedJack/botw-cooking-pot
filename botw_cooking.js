@@ -62,7 +62,7 @@ let effects = {
         timeAdded: 150
     },
     healthUp: {
-        name: "bonus temporary hearts and full health recovery",
+        name: "bonus temporary hearts.",
         t2Min: null
     },
     staminaUp: {
@@ -1390,6 +1390,9 @@ function cook(ingredients){
     }
     //And this displays health and stamina effects.
     else{
+        if(dish.effectType === "healthUp"){
+            resultHearts.innerText = "Full heart restoration.";
+        }
         resultEffect.innerText = "Effect: " + (dish.effectStrength + " " + effects[dish.effectType].name);
     }
 }
