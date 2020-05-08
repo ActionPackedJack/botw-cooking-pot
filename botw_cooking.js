@@ -213,8 +213,8 @@ let ingredients = [
     {
         name: "Bokoblin Guts",
         type: "monsterPart",
-        heartRestoration: 190,
-        timeAdded: null,
+        heartRestoration: 0,
+        timeAdded: 190,
         effectType: null,
         effectStrength: 0
     },
