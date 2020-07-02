@@ -1353,6 +1353,7 @@ function cook(ingredients){
     //If monster extract was used, this reports all the random variations of the dish that could be made.
     if(dish.hasMonsterExtract === true){
         if(dish.effectType === "healthUp" || dish.effectType === "staminaUp" || dish.effectType === "rejeuvenating"){
+            console.log ("further research needed.");
             resultEffect.innerText = "Further data needed.  Unknown how monster extract interacts with effects not attached to timers.";
         }
         else{
