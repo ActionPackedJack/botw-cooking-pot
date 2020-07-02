@@ -1352,29 +1352,34 @@ function cook(ingredients){
     resultHearts.innerText = "Hearts restored: " + dish.heartRestoration;
     //If monster extract was used, this reports all the random variations of the dish that could be made.
     if(dish.hasMonsterExtract === true){
-        dish.heartRestoration = ((dish.heartRestoration/4) + ", " + dish.heartRestoration + ", or " + (dish.heartRestoration + 3));
-        dish.effectSeconds = "1:00, 10:00 or 30:00";
-        if(dish.effectType !== null && dish.noEffect === false){
-            switch(dish.effectString){
-                case "low-level":
-                    dish.effectString = "(2/3 chance of low-level, 1/3 chance of mid-level)";
-                    break;
-                case "mid-level":
-                    dish.effectString = "(equal chance of low/mid/high-level)";
-                    break;
-                case "high-level":
-                    dish.effectString = "(2/3 chance of high-level, 1/3 chance of low-level)";
-                    break;
-                case "partial":
-                    dish.effectString = "(2/3 chance of partial, 1/3 chance of full)";
-                    break;
-                case "full":
-                    dish.effectString = ("2/3 chance of full, 1/3 chance of partial");
-                    break;
-            }
-            resultEffect.innerText = "Effect: " + dish.effectSeconds + " of " + dish.effectString + " " + effects[dish.effectType].name;
+        if(dish.effectType === "healthUp" || dish.effectType === "staminaUp" || dish.effectType === "rejeuvenating"){
+            resultEffect.innerText = "Further data needed.  Unknown how monster extract interacts with effects not attached to timers.";
         }
-        resultHearts.innerText = "Hearts restored: " + dish.heartRestoration;
+        else{
+            dish.heartRestoration = ((dish.heartRestoration/4) + ", " + dish.heartRestoration + ", or " + (dish.heartRestoration + 3));
+            dish.effectSeconds = "1:00, 10:00 or 30:00";
+            if(dish.effectType !== null && dish.noEffect === false){
+                switch(dish.effectString){
+                    case "low-level":
+                        dish.effectString = "(2/3 chance of low-level, 1/3 chance of mid-level)";
+                        break;
+                        case "mid-level":
+                            dish.effectString = "(equal chance of low/mid/high-level)";
+                            break;
+                        case "high-level":
+                            dish.effectString = "(2/3 chance of high-level, 1/3 chance of low-level)";
+                            break;
+                        case "partial":
+                            dish.effectString = "(2/3 chance of partial, 1/3 chance of full)";
+                            break;
+                        case "full":
+                            dish.effectString = ("2/3 chance of full, 1/3 chance of partial");
+                            break;
+                    }
+                    resultEffect.innerText = "Effect: " + dish.effectSeconds + " of " + dish.effectString + " " + effects[dish.effectType].name;
+                    }
+                resultHearts.innerText = "Hearts restored: " + dish.heartRestoration;
+                }
     }
     //This invalidates the dish's effect if conflicting ingredients were found.
     else if(dish.noEffect === true){
