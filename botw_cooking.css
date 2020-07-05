@@ -40,3 +40,7 @@ h1{
   .tooltip:hover .tooltipText {
     visibility: visible;
   }
+
+  #cookButton{
+    border-image: url("cook_button_prompt.png") fill;
+  }

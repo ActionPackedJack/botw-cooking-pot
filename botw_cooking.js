@@ -1405,6 +1405,7 @@ function cook(ingredients){
 
 //This assigns the above function to a button.
 cookButton.addEventListener("click", function(){
+    console.log("COOKING");
     let ingredients = [];
     Array.prototype.forEach.call(selectors,function(selector){
         if(selector.value !== 'Nothing'){
