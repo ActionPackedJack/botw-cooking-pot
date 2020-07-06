@@ -1238,8 +1238,37 @@ function copy(){
 copyButton.addEventListener("click", function(){
     copy();
 })
+let resetArray = [];
+document.addEventListener("keypress", function(e){
+    console.log("Pressed ", e.key);
+    if(e.key === "a"){
+        cook();
+        resetArray = [];
+        Array.prototype.forEach.call(selectors, function(selector){
+            resetArray.push(selector.value);
+        })
+        setTimeout(selectPreserve, 1);
+    }
+function selectPreserve(){
+    console.log("selectPreserve");
+        let resetIndex = 0;
+        Array.prototype.forEach.call(selectors, function(selector){
+            if(resetIndex < resetArray.length){
+                selector.value = resetArray[resetIndex];
+                resetIndex++;
+            }
+        })
+    }
+})
 //Main cook function.
-function cook(ingredients){
+function cook(){
+    //This assembles an array of ingredients by pulling the values of all the selectors. 
+    let ingredients = [];
+    Array.prototype.forEach.call(selectors,function(selector){
+        if(selector.value !== 'Nothing'){
+            ingredients.push(JSON.parse(selector.value));
+        }
+    });
     //This terminates the function early if no ingredients were selected.
     if(ingredients.length === 0){
         resultHearts.innerText = "";
@@ -1401,18 +1430,21 @@ function cook(ingredients){
         }
         resultEffect.innerText = "Effect: " + (dish.effectStrength + " " + effects[dish.effectType].name);
     }
+    // let resetIndex = 0;
+    // Array.prototype.forEach.call(selectors, function(selector){
+    //     if(resetIndex < ingredients.length){
+    //         console.log (selector.value);
+    //         console.log(ingredients[resetIndex]);
+    //         selector.value = ingredients[resetIndex];
+    //         resetIndex ++;
+    //     }
+    // })
 }
 
 //This assigns the above function to a button.
 cookButton.addEventListener("click", function(){
     console.log("COOKING");
-    let ingredients = [];
-    Array.prototype.forEach.call(selectors,function(selector){
-        if(selector.value !== 'Nothing'){
-            ingredients.push(JSON.parse(selector.value));
-        }
-    });
-    cook(ingredients);
+    cook();
 });
 //This checks whether an ingredient is valid.
 function dubiousCheck(ingredients){
